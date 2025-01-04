@@ -1,0 +1,28 @@
+<div [formGroup]="form">
+  <div formArrayName="steps">
+    <h3>Étapes</h3>
+    <div
+      *ngFor="let stepForm of steps.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <mat-form-field>
+        <mat-label>Étape {{ stepForm.get("stepNumber")?.value }}:</mat-label>
+        <textarea
+          matInput
+          id="step-{{ i }}"
+          formControlName="description"
+        ></textarea>
+      </mat-form-field>
+      <button
+        mat-mini-fab
+        aria-label="Retirer une étape"
+        (click)="removeStep(i)"
+      >
+        <mat-icon>remove</mat-icon>
+      </button>
+    </div>
+  </div>
+  <button mat-mini-fab aria-label="Ajouter une etape" (click)="addStep()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
