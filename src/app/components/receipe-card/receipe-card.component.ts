@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { Receipe } from 'src/app/entity/receipe.class';
 
 @Component({
   selector: 'receipe-card',
@@ -6,7 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./receipe-card.component.less'],
 })
 export class ReceipeCardComponent {
+  @Input() receipe: Receipe | undefined;
+
+  constructor(private router: Router) {}
   public showReceipe = () => {
-    console.log('click card');
+    this.router.navigateByUrl(`recette/${this.receipe?.id}`);
   };
+
+  public get getReceipe() {
+    return this.receipe;
+  }
 }

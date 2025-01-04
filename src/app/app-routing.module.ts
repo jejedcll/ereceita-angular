@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RecipeFormComponent } from './components/recipe-form/recipe-form.component';
+import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'ajouter-recette',
     component: RecipeFormComponent,
+  },
+  {
+    path: 'recette/:id',
+    component: RecipeDetailComponent,
   },
 ];
 

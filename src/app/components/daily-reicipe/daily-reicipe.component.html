@@ -2,13 +2,13 @@
   <h2>Le menu du jour</h2>
   <div id="dailyReicipeMenu">
     <div id="dailyStarter">
-      <receipe-card></receipe-card>
+      <receipe-card [receipe]="entreeReceipe" ></receipe-card>
     </div>
     <div id="dailyMainCourse">
-      <receipe-card></receipe-card>
+      <receipe-card [receipe]="mainReceipe"></receipe-card>
     </div>
     <div id="dailyStarter">
-      <receipe-card></receipe-card>
+      <receipe-card [receipe]="dessertReceipe"></receipe-card>
     </div>
   </div>
 </div>

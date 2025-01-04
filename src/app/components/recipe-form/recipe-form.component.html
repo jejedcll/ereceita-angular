@@ -1,1 +1,15 @@
-<p>recipe works!</p>
+<div id="receipeForm">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Nom de la recette</mat-label>
+        <input matInput id="recipeName" formControlName="name" />
+      </mat-form-field>
+    </div>
+
+    <ingredient-form></ingredient-form>
+    <step-form></step-form>
+
+    <button mat-flat-button type="submit">Enregistrer</button>
+  </form>
+</div>
